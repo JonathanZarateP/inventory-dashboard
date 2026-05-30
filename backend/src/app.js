@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { testConnection } from './config/db.js';
+import authRoutes from './routes/auth.routes.js';
 
 dotenv.config();
 
@@ -14,6 +15,9 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
+
+// Rutas
+app.use('/api/auth', authRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
