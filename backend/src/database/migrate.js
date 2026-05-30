@@ -60,6 +60,8 @@ const createTables = async () => {
         min_stock INT NOT NULL DEFAULT 5,
         price DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
         unit VARCHAR(50) NOT NULL DEFAULT 'piezas',
+        image_url VARCHAR(500) DEFAULT NULL,
+        image_storage_id VARCHAR(255) DEFAULT NULL,
         is_active TINYINT(1) NOT NULL DEFAULT 1,
         CHECK (stock >= 0),
         CHECK (min_stock >= 0),
